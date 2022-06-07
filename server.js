@@ -5,9 +5,7 @@ const bookRoutes = require('./controllers/book')
 const app = express()
 
 // Routes
-app.get('/', (req, res) => {
-    res.send('Hello World')
-})
+app.use('/books', bookRoutes)
 
 // DB connection
 mongoose.connect(process.env.MONGO_URI, { useNewUrlParser: true, useUnifiedTopology: true})
