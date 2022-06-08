@@ -1,6 +1,10 @@
 const router = require('express').Router()
 const Book = require('../models/book')
+const express = require('express')
+const cors = require('cors')
+const app = express()
 
+app.use(cors())
 
 router.get('/seed', (req, res) => {
     Book.insertMany([{
