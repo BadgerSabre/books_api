@@ -4,6 +4,9 @@ const mongoose = require('mongoose')
 const bookRoutes = require('./controllers/book')
 const app = express()
 
+// Middleware
+app.use(express.json())
+
 // Routes
 app.use('/books', bookRoutes)
 

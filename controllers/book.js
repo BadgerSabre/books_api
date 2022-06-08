@@ -66,8 +66,8 @@ router.get('/:id', async (req, res) => {
 // POST create new book
 router.post('/', async (req, res) => {
     try {
-        await Book.create(req.body)
-        res.redirect('/books')
+        let newBook = await Book.create(req.body)
+        res.json(newBook)
     } catch (error) {
         console.log(error)
         res.send('ERROR')
